@@ -17,19 +17,13 @@ module.exports = function (digits) {
   // do your work here
 
   function palindromeCheck(input) {
-    var palindrome = parseInt(
-      input
-        .toString()
-        .split("")
-        .reverse()
-        .join("")
-    );
+    var palindrome = parseInt(input.toString().split("").reverse().join(""));
 
     if (palindrome === input) return true;
     else return false;
   }
 
-  (function () {
+  function findPalindrome() {
     for (
       dummyfactor0 = Math.pow(10, digits - 1);
       dummyfactor0 <= Math.pow(10, digits) - 1;
@@ -43,31 +37,17 @@ module.exports = function (digits) {
             factor_1 = dummyfactor1;
             max = product;
             palindromeNumber = max;
-
           }
         }
       }
-      getPalindromeNumber();
-      getFactor0();
-      getFactor1();
     }
-  }());
+  };
 
-  function getPalindromeNumber() {
-    return palindromeNumber;
-  }
-  function getFactor0() {
-    return factor_0;
-  }
-  function getFactor1() {
-    return factor_1
-  }
-  console.log(palindromeNumber);
+  findPalindrome()
   return {
     palindromeCheck: palindromeCheck,
     factor_0: factor_0,
     factor_1: factor_1,
     palindromeNumber: palindromeNumber
-
   };
 };
